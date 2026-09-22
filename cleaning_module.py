@@ -51,4 +51,6 @@ customers = customers.drop_duplicates()
 # Remove rows with missing book titles or customer IDs
 library = library.dropna(subset=["Books", "Customer ID"])
 
-print(library)
+# Save cleaned data
+library.to_csv("library_cleaned.csv", index=False)
+customers.to_csv("library_customers_cleaned.csv", index=False)
