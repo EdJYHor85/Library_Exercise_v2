@@ -1,0 +1,46 @@
+# Pipeline 
+# stages
+# RUN 
+
+
+stages:
+  -stage: Test
+  jobs:
+    -job: Pytest
+    pool: #check this
+      vmImage: ubuntu-latest
+    steps:
+      -script: pytest 
+      displayName: Testing...
+  -stage: DeployToProd
+  dependsOn: Test
+  condition: succeeded
+  jobs:
+    -deployment: release
+    environment: production
+    -job: Pytest
+    pool:
+      vmImage: ubuntu-latest
+    strategy: 
+    runonce:
+      deplpoy:
+        steps:
+        - steps: -echo "deploying"
+          displayName: deploying...
+
+steps:
+  -tasK: AzureKeyVault@2
+  inputs:
+    azureSubscription: eds-data-platform-prod, 123A
+    KeyValytName: eds-data-key-vault
+    RunAsPreJobL true
+env:
+  DATABRICKS_HOST: ${secret_host}
+  DOCKER_HUB_LOGIN: ${secret_password}
+
+steps: #link this task to the prebuild
+  -task: UsePythonVersion@1
+    input:
+      versionSpec: '3.14'
+  -script: pip install -r requirements.txt
+  displayName: Installing modules
