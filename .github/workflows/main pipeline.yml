@@ -47,3 +47,12 @@ jobs:
       - name: Run Tests
         run: |
           pytest "03 testing"
+          
+      - name: Use GitHUB Secret
+      env:
+        DEMO_SECRET: ${{secrets.DEMO_SECRET}}
+        run: |
+          if [ -n "$DEMO_SECRET" ]; then
+            echo "The secret was loaded successfully"
+          else
+      echo "Cannot find secret"
