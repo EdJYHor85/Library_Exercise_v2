@@ -40,7 +40,5 @@ jobs:
       # Run pytest tests
       - name: Run pytest tests
         run: |
-            python -m pytest "03 testing" \
-              --ignore-glob="*test_cleaning_module_v2.py" \
-              -v
+            python -m pytest "03 testing" \-v
           
