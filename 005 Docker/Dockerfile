@@ -9,6 +9,6 @@ RUN pip install -no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "src/main.py"]
+CMD ["python", "02 main/cleaning_module_v2.py "]
 
 
