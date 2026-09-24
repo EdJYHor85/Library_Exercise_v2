@@ -1,0 +1,9 @@
+Id,Books,Book checkout,Book Returned,Days allowed to borrow,Customer ID,Days Borrowed
+1.0,Catcher in the Rye ,2023-02-20,2023-02-25,2 weeks,1.0,5
+9.0,Catch 22,2023-04-15,2023-04-16,2 weeks,7.0,1
+10.0,Animal Farm ,2023-04-20,2023-04-24,2 weeks,2.0,4
+11.0,1984,2023-04-23,2023-04-27,2 weeks,8.0,4
+13.0,East of Eden,2023-04-30,2023-05-05,2 weeks,2.0,5
+14.0,America Is in the Heart,2023-05-01,2023-05-07,2 weeks,3.0,6
+15.0,Wuthering Heights,2023-05-01,2023-05-10,2 weeks,9.0,9
+18.0,Les Miserables,2023-06-03,2023-06-07,2 weeks,5.0,4

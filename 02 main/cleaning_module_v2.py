@@ -235,8 +235,8 @@ def clean_books(library, customers):
 
 if __name__ == "__main__":
 
-    library = pd.read_csv("library.csv")
-    customers = pd.read_csv("library_customers.csv")
+    library = pd.read_csv("01 data\library.csv")
+    customers = pd.read_csv("01 data\library_customers.csv")
 
     print("\nMISSING VALUES")
     print(find_missing_values(library))

@@ -1,14 +1,23 @@
 import pandas as pd
 import pytest
+import importlib
+
+from pathlib import Path
+import sys
+
+#Project root
+ROOT = Path(__file__).resolve().parent.parent
+
+#Add the "02 main" folder to Python's search path
+sys.path.insert(0, str(ROOT / "02 main"))
 
 from cleaning_module_v2 import (
-    remove_empty_rows,
-    convert_dates,
-    find_duplicate_loans,
-    remove_invalid_customer_ids,
-    remove_invalid_borrow_periods
+remove_empty_rows,
+convert_dates,
+find_duplicate_loans,
+remove_invalid_customer_ids,
+remove_invalid_borrow_periods
 )
-
 
 # ------------------
 # TEST EMPTY CELLS CLEANUP
